@@ -36,9 +36,9 @@ export default function CallToActionWithIllustration() {
     setFilter(event.target.value);
   };
 
-  useEffect(() => {
-    getWeatherData("Mexico");
-  }, []);
+  // useEffect(() => {
+  //   getWeatherData("Mexico");
+  // }, []);
 
   const getWeatherData = async (city: string) => {
     try {
