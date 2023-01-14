@@ -54,7 +54,7 @@ import {
           spacing={4}
           justify={{ base: 'center', md: 'space-between' }}
           align={{ base: 'center', md: 'center' }}>
-          <Text>Made by ... </Text>
+          <Text>Made with ❤️ by Rohan, Miguel, Charles & Matt </Text>
           <Stack direction={'row'} spacing={6}>
             <SocialButton label={'Email Me'} href={'mailto:charlesnnyabeze@gmail.com'}>
               <IoMdMailUnread />
