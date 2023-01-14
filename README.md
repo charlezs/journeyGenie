@@ -1,12 +1,13 @@
 
-# JourneyGenie
+# JourneyGenie 🧞‍♂️
 
-JourneyGenie is an application that will tell you the all the components you need for a PERFECT trip ✈️. The application is hosted on Vercel [journeygenie.vercel.com](here).
+JourneyGenie is an application that will tell you the all the components you need for a PERFECT trip ✈️. 
+The application is hosted on Vercel [here](vercel.com).
 
-Proudly build during TreasureHacks 3.0
+Proudly build during [TreasureHacks 3.0](https://treasure-hacks-3-0.devpost.com/).
 
 ## Screenshots
-<img src="https://github.com/charlezs/journeyGenie/public/assets/Platform.png" alt="Main Platform" width="600px" />
+<img src="public/assets/JourneyPlatform.png"/>
 
 ## Inspiration
 With the focus of 'Life is a Game' theme,  we wanted to have a project that made a life activity (travelling) more efficient. When you travel to a new location you want to make the most of the trip by experience the best the travel has to offer.
@@ -14,11 +15,11 @@ With the focus of 'Life is a Game' theme,  we wanted to have a project that made
 As avid travellers, we often travelled to a new places but had no idea about what the best places to go were. We wished for an easy way to be able to input our location and be returned with the best options. 
 
 ## Core Functionality
-At it's core, JourneyGenie allows users to put in their travel location (ex: Mexico), and then choose amongst 5 main options:
-⚡️ The Best Places to Go
-⚡️ The Best Things to Do
-⚡️ The Best Travel Tips
-⚡️ The Best Clothes to Bring
+At it's core, JourneyGenie allows users to put in their travel location (ex: Mexico), and then choose amongst 5 main options: \
+⚡️ The Best Places to Go \
+⚡️ The Best Things to Do \
+⚡️ The Best Travel Tips \
+⚡️ The Best Clothes to Bring \
 ⚡️ The Best Times to Go
 
 The "Genie" then takes the response to another level by introducing DaVinci AI to be able to determine the most optimal travel experience. Users can then have a quick answer to their travel questions. Additionally, the user is displayed with relevant widgets towards the location of the place they were looking to travel to.
