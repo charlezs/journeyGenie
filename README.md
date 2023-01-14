@@ -2,7 +2,7 @@
 # JourneyGenie 🧞‍♂️
 
 JourneyGenie is an application that will tell you the all the components you need for a PERFECT trip ✈️. 
-The application is hosted on Vercel [here](vercel.com).
+The application is hosted on Vercel [here](https://journey-genie.vercel.app/).
 
 Proudly build during [TreasureHacks 3.0](https://treasure-hacks-3-0.devpost.com/).
 
