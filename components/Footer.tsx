@@ -44,7 +44,7 @@ import {
   export default function SmallWithSocial() {
     return (
       <Box
-        bg={'black'}
+        bg={'green.400'}
         color={'white'}>
         <Container
           as={Stack}
