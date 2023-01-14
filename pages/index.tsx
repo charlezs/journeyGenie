@@ -36,16 +36,14 @@ export default function CallToActionWithIllustration() {
     setFilter(event.target.value);
   };
 
-  // useEffect(() => {
-  //   getWeatherData("Mexico");
-  // }, []);
+  useEffect(() => {
+    getWeatherData("Mexico");
+  }, []);
 
   const getWeatherData = async (city: string) => {
     try {
-      const apiKey = process.env.REACT_APP_WEATHERAPI_KEY;
-      const url = `http://api.weatherapi.com/v1/current.json?key=c6f3722a23034ee5a85211122231401&q=${city}}`;
+      const url = `http://api.weatherapi.com/v1/current.json?key=${process.env.NEXT_PUBLIC_WEATHERAPI_KEY}&q=${city}}`;
       const response = await axios.get(url);
-      console.log(response);
     } catch (error) {
       console.log(error);
     }
@@ -68,8 +66,7 @@ export default function CallToActionWithIllustration() {
         },
         {
           headers: {
-            Authorization:
-              "Bearer " + "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",
+            Authorization: "Bearer " + process.env.NEXT_PUBLIC_OPENAI_API_KEY,
           },
         }
       )
