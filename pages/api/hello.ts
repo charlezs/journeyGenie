@@ -28,7 +28,6 @@ export default async function handler(
       frequency_penalty: 0.5,
       presence_penalty: 0.0,
     });
-    // TODO: figure out why there isnt any data in the response from the model
 
     res.status(200).send({
       bot: response.data.choices[0].text,

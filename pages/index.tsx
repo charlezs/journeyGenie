@@ -14,8 +14,45 @@ import {
   Select,
 } from '@chakra-ui/react';
 import { TypeAnimation } from 'react-type-animation';
+import { useState } from 'react';
+import axios from 'axios';
 
 export default function CallToActionWithIllustration() {
+  const [destination, setDestination] = useState('Mexico');
+  const [filter, setFilter] = useState('the best places to go?'); // ['best places to go', 'best things to do', 'best travel tips', 'clothes to bring', 'best times to go'
+
+  const handleInputFormChange = (event: any) => {
+    // console.log(event.target.value);
+    setDestination(event.target.value);
+  };
+
+  const handleDropDownChange = (event: any) => {
+    // console.log(event.target.value);
+    setFilter(event.target.value);
+  }
+
+  const gpt3PostClient = axios.create({
+    baseURL: "https://api.openai.com/v1/completions"
+  })
+
+  const returnAPIResults = async () => {
+    const promptVal = "I am going to " + destination + " what are " + filter;
+    gpt3PostClient.post('', {
+        model: "text-davinci-003",
+        prompt: promptVal,
+        max_tokens: 1000,
+        temperature: 0
+      },{
+        headers: {
+          Authorization: "Bearer " + "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"
+        }
+      }).then((resp) => {
+        console.log(resp.data.choices[0].text);
+      })
+
+  }
+
+
   return (
     <Container maxW={'6xl'} minHeight={{ base: '90vh', sm: '90vh', md: '95.5vh' }}>
       <Stack
@@ -63,6 +100,10 @@ export default function CallToActionWithIllustration() {
             type="text"
             textAlign='match-parent'
             width={'36'}
+            id="destination"
+            name="destination"
+            onChange={handleInputFormChange}
+            value={destination}
           />
         <Text>what are</Text>
             <Select 
@@ -70,11 +111,12 @@ export default function CallToActionWithIllustration() {
             _placeholder={{ color: 'gray.500' }}
             textAlign='match-parent'
             width={'50'}
+            onChange={handleDropDownChange}
             >
                 <option>the best places to go?</option>
                 <option>the best things to do?</option>
                 <option>the best travel tips?</option>
-                <option>the clothes to bring?</option>
+                <option>the best clothes to bring?</option>
                 <option>the best times to go?</option>
             </Select>
 
@@ -88,7 +130,9 @@ export default function CallToActionWithIllustration() {
             color={'white'}
             _hover={{
               bg: 'green.500',
-            }}>
+            }}
+            onClick={returnAPIResults}
+            >
             Find Out ✨✈️
           </Button>
         </Stack>
