@@ -24,6 +24,7 @@ import axios from 'axios';
 export default function CallToActionWithIllustration() {
   const [destination, setDestination] = useState('Mexico');
   const [filter, setFilter] = useState('the best places to go?'); // ['best places to go', 'best things to do', 'best travel tips', 'clothes to bring', 'best times to go'
+  const [data, setData] = useState('');
 
   const handleInputFormChange = (event: any) => {
     // console.log(event.target.value);
@@ -51,7 +52,8 @@ export default function CallToActionWithIllustration() {
           Authorization: "Bearer " + "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"
         }
       }).then((resp) => {
-        console.log(resp.data.choices[0].text);
+        // console.log(resp.data.choices[0].text);
+        setData(resp.data.choices[0].text);
       })
 
   }
@@ -141,8 +143,9 @@ export default function CallToActionWithIllustration() {
           </Button>
         </Stack>
         <Stack w='100%'>
-        <Text fontSize={'2xl'}>Genies Response 🪄</Text>
+        <Text fontSize={'2xl'} >Genies Response 🪄</Text>
             <Box padding='6' boxShadow='lg' bg='white' borderRadius='lg' borderColor={'black'} borderWidth='1px'>
+              {data}
             <Skeleton height='20px' />
             </Box> 
         </Stack>     
