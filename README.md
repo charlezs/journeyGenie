@@ -28,7 +28,7 @@ The "Genie" then takes the response to another level by introducing DaVinci AI t
 The frontend of our web application itself was built using pure typescript with HTML as well as CSS elements. When the user decides to input the location, the answers are same in local storage and sends the info to OpenAI to process the answer. The main backend is API calls to OpenAI. The end result uses Conversatinal AI to determine the optimal travel experience.
 
 ## Challenges We Ran Into
-The majority of the API calls to OpenAI were relatively unknown to us before. Additionally, inputting the final result into the 'Genie' textbox while removing the loading bars was a bit challenging. We learned how to use local storage to save previous answers. Lastly, 
+The majority of the API calls to OpenAI were relatively unknown to us before. Additionally, inputting the final result into the 'Genie' textbox while removing the loading bars was a bit challenging. Lastly, We learned how to use local storage to save previous answers.
 
 ## Accomplishments We Are Proud Of
 We are incredibly proud of our extreme resilient commitment to the project throughout the 24 hour hackathon. We are quite happy with our front end design, and the 'Genie' user experience of the answer. Lastly, we're extremely content with the fact that we are able to successfully connect our frontend and backend together to effectively make API calls, completing the conversational AI process.
