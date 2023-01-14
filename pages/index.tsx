@@ -12,6 +12,10 @@ import {
   Input,
   HStack,
   Select,
+  Skeleton,
+  Box,
+  SkeletonCircle,
+  SkeletonText,
 } from '@chakra-ui/react';
 import { TypeAnimation } from 'react-type-animation';
 import { useState } from 'react';
@@ -136,7 +140,13 @@ export default function CallToActionWithIllustration() {
             Find Out ✨✈️
           </Button>
         </Stack>
-      </Stack>
+        <Stack w='100%'>
+        <Text fontSize={'2xl'}>Genies Response 🪄</Text>
+            <Box padding='6' boxShadow='lg' bg='white' borderRadius='lg' borderColor={'black'} borderWidth='1px'>
+            <Skeleton height='20px' />
+            </Box> 
+        </Stack>     
+        </Stack>
     </Container>
   );
 }
