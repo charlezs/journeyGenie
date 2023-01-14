@@ -10,6 +10,8 @@ import {
   Center,
   FormControl,
   Input,
+  HStack,
+  Select,
 } from '@chakra-ui/react';
 import { TypeAnimation } from 'react-type-animation';
 
@@ -50,15 +52,35 @@ export default function CallToActionWithIllustration() {
   />
   
     </Center>
-    <FormControl id="promt" borderColor={'black'}>
+    <Center>
+    <FormControl id="promt" borderColor={'black'} fontSize={'2xl'} pt='10'>
+      <HStack>
+        <Text>I am going to </Text>
+
           <Input
-            placeholder="I am going to Mexico for 5 days, what should I bring?"
+            placeholder="Mexico"
             _placeholder={{ color: 'gray.500' }}
             type="text"
-            height={'130px'}
             textAlign='match-parent'
+            width={'36'}
           />
+        <Text>what are</Text>
+            <Select 
+            placeholder='select an option'
+            _placeholder={{ color: 'gray.500' }}
+            textAlign='match-parent'
+            width={'50'}
+            >
+                <option>the best places to go?</option>
+                <option>the best things to do?</option>
+                <option>the best travel tips?</option>
+                <option>the clothes to bring?</option>
+                <option>the best times to go?</option>
+            </Select>
+
+      </HStack>
     </FormControl>
+    </Center>
         <Stack spacing={6}>
           <Button
             bg={'green.400'}
