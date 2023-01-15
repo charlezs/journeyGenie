@@ -12,10 +12,8 @@ import {
   Input,
   HStack,
   Select,
-  Skeleton,
   Box,
-  SkeletonCircle,
-  SkeletonText,
+
 } from "@chakra-ui/react";
 import { TypeAnimation } from "react-type-animation";
 import { useState } from "react";
@@ -187,7 +185,6 @@ export default function CallToActionWithIllustration() {
             ) : (
               data
             )}
-            <Skeleton height="20px" />
           </Box>
         </Stack>
       </Stack>
