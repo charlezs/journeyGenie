@@ -16,17 +16,17 @@ import {
   Box,
   SkeletonCircle,
   SkeletonText,
-} from '@chakra-ui/react';
-import { TypeAnimation } from 'react-type-animation';
-import { useState } from 'react';
-import axios from 'axios';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Spinner } from 'react-bootstrap';
+} from "@chakra-ui/react";
+import { TypeAnimation } from "react-type-animation";
+import { useState } from "react";
+import axios from "axios";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Spinner } from "react-bootstrap";
 
 export default function CallToActionWithIllustration() {
-  const [destination, setDestination] = useState('Mexico');
-  const [filter, setFilter] = useState('the best places to go?'); // ['best places to go', 'best things to do', 'best travel tips', 'clothes to bring', 'best times to go'
-  const [data, setData] = useState('');
+  const [destination, setDestination] = useState("Mexico");
+  const [filter, setFilter] = useState("the best places to go?"); // ['best places to go', 'best things to do', 'best travel tips', 'clothes to bring', 'best times to go'
+  const [data, setData] = useState("");
   const [startedReq, setStartedRequest] = useState(false);
 
   const handleInputFormChange = (event: any) => {
@@ -57,19 +57,23 @@ export default function CallToActionWithIllustration() {
   const returnAPIResults = async () => {
     setStartedRequest(true);
     const promptVal = "I am going to " + destination + " what are " + filter;
-    gpt3PostClient.post('', {
-        model: "text-davinci-003",
-        prompt: promptVal,
-        max_tokens: 1000,
-        temperature: 0
-      },{
-        headers: {
-          //"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"
-          'Content-Type': 'application/json',
-          Authorization: "Bearer " + "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"
-          
+    gpt3PostClient
+      .post(
+        "",
+        {
+          model: "text-davinci-003",
+          prompt: promptVal,
+          max_tokens: 1000,
+          temperature: 0,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + process.env.NEXT_PUBLIC_OPENAI_API_KEY,
+          },
         }
-      }).then((resp) => {
+      )
+      .then((resp) => {
         setStartedRequest(false);
         console.log(resp.data.choices[0].text);
         setData(resp.data.choices[0].text);
@@ -167,14 +171,25 @@ export default function CallToActionWithIllustration() {
             Find Out ✨✈️
           </Button>
         </Stack>
-        <Stack w='100%'>
-        <Text fontSize={'2xl'} >Genies Response 🪄</Text>
-            <Box padding='6' boxShadow='lg' bg='white' borderRadius='lg' borderColor={'black'} borderWidth='1px'>
-            {(!data && startedReq) ? <Spinner style={{marginBottom:27}} animation="border"/>: data}   
-            <Skeleton height='20px' />
-            </Box> 
-        </Stack>     
+        <Stack w="100%">
+          <Text fontSize={"2xl"}>Genies Response 🪄</Text>
+          <Box
+            padding="6"
+            boxShadow="lg"
+            bg="white"
+            borderRadius="lg"
+            borderColor={"black"}
+            borderWidth="1px"
+          >
+            {!data && startedReq ? (
+              <Spinner style={{ marginBottom: 27 }} animation="border" />
+            ) : (
+              data
+            )}
+            <Skeleton height="20px" />
+          </Box>
         </Stack>
-  </Container>
+      </Stack>
+    </Container>
   );
 }
