@@ -55,6 +55,7 @@ export default function CallToActionWithIllustration() {
   });
 
   const returnAPIResults = async () => {
+    setData("");
     setStartedRequest(true);
     const promptVal = "I am going to " + destination + " what are " + filter;
     gpt3PostClient
